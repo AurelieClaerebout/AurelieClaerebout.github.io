@@ -1,14 +1,11 @@
 * {
   text-decoration: none;
-  color: black;
+  color: #000;
+  font-family: "Roboto", sans-serif;
 }
 
 .logo, h3 {
   font-family: "Shrikhand", cursive;
-}
-
-h1, h2 {
-  font-family: "Roboto", sans-serif;
 }
 
 .logo, .search, .menu {
@@ -20,13 +17,27 @@ h1, h2 {
   padding: 10px;
 }
 
+input[type=search] {
+  border: none;
+  background: transparent;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
 .menu {
   background: #eeededbb;
-  padding-top: 60px;
+  padding: 40px 0 40px 0;
 }
 .menu .menu_info {
   margin-top: 0;
   font-size: 20px;
+}
+
+button {
+  background: linear-gradient(#FF79DA, #9356DC);
+  border-radius: 20px;
+  padding: 10px;
+  border: none;
 }
 
 .functioning__title {
@@ -61,8 +72,14 @@ li::before {
   border-radius: 50%;
   text-align: center;
 }
+li:hover {
+  background: #fff3fc;
+}
 li i {
   padding: 5px;
+}
+li i:hover {
+  color: #9356DC;
 }
 
 .container {
@@ -78,10 +95,28 @@ li i {
 .container__restaurant-card {
   width: 50%;
 }
+.container__restaurant-card figure {
+  background: #FFF;
+  border-radius: 20px;
+  overflow: hidden;
+}
 .container__restaurant-card img {
   width: 100%;
   height: 150px;
   object-fit: cover;
+}
+.container__restaurant-card figcaption {
+  position: relative;
+}
+.container__restaurant-card h4, .container__restaurant-card p {
+  margin: 0;
+  padding: 10px;
+}
+.container__restaurant-card i {
+  position: absolute;
+  right: 20px;
+  top: 25px;
+  font-size: 30px;
 }
 
 /*# sourceMappingURL=style.css.map */
