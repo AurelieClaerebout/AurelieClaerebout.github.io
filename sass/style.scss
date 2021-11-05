@@ -1,0 +1,108 @@
+@import "./Utils/variables";
+
+*
+{
+    text-decoration: none;
+    color: black;
+}
+
+.logo, h3
+{
+    font-family: 'Shrikhand', cursive;
+}
+
+h1, h2
+{
+    font-family: 'Roboto', sans-serif;
+}
+
+.logo, .search, .menu
+{
+    text-align: center;
+}
+
+.search
+{
+    background: darken($color-background, 5);
+    padding: 10px;
+}
+
+.menu
+{
+    background: $color-background;
+    padding-top: 60px;
+    .menu_info
+    {
+        margin-top: 0;
+        font-size: 20px;
+    }
+}
+.functioning
+{
+    &__title
+    {
+        text-align: center;
+    }
+    &__list
+    {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+ol
+{
+    list-style-type: none;
+}
+
+li
+{
+    counter-increment: li;
+    background: $color-background;
+    width: 30%;
+    height: 50px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    &::before
+    {
+        content: counter(li);
+        background: $color-primary;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        text-align: center;
+    }
+    i 
+    {
+        padding: 5px;
+    }
+}
+
+.container
+{
+    background: $color-background;
+
+    &__title{
+        text-align: center;
+        ;
+    }
+    &__restaurant{
+           display: flex;
+           flex-wrap: wrap;
+           
+    }
+    &__restaurant-card
+    {
+        width: 50%;
+        img{
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        }
+        
+    }
+}

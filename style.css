@@ -1,0 +1,87 @@
+* {
+  text-decoration: none;
+  color: black;
+}
+
+.logo, h3 {
+  font-family: "Shrikhand", cursive;
+}
+
+h1, h2 {
+  font-family: "Roboto", sans-serif;
+}
+
+.logo, .search, .menu {
+  text-align: center;
+}
+
+.search {
+  background: rgba(226, 224, 224, 0.7333333333);
+  padding: 10px;
+}
+
+.menu {
+  background: #eeededbb;
+  padding-top: 60px;
+}
+.menu .menu_info {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.functioning__title {
+  text-align: center;
+}
+.functioning__list {
+  display: flex;
+  justify-content: space-around;
+}
+
+ol {
+  list-style-type: none;
+}
+
+li {
+  counter-increment: li;
+  background: #eeededbb;
+  width: 30%;
+  height: 50px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+li::before {
+  content: counter(li);
+  background: #9356DC;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+}
+li i {
+  padding: 5px;
+}
+
+.container {
+  background: #eeededbb;
+}
+.container__title {
+  text-align: center;
+}
+.container__restaurant {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container__restaurant-card {
+  width: 50%;
+}
+.container__restaurant-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+/*# sourceMappingURL=style.css.map */
