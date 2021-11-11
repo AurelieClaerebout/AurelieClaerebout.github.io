@@ -21,7 +21,7 @@ main {
 }
 
 .search {
-  background: rgba(226, 224, 224, 0.7333333333);
+  background: #e2e0e0;
   padding: 10px;
   border-radius: 20px 20px 0 0;
 }
@@ -34,7 +34,7 @@ input[type=search] {
 }
 
 .menu {
-  background: #eeededbb;
+  background: #eeeded;
   padding: 40px 0 40px 0;
   border-radius: 0 0 20px 20px;
 }
@@ -65,33 +65,35 @@ button:hover {
   justify-content: space-around;
   padding: 0;
 }
-
 .functioning ol {
   list-style-type: none;
 }
 
 .functioning li {
   counter-increment: li;
-  background: #eeededbb;
-  width: 30%;
+  background: #eeeded;
+  width: 20%;
   height: 50px;
   border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
+  position: relative;
 }
 .functioning li::before {
   content: counter(li);
   background: #9356DC;
-  display: inline-block;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   text-align: center;
+  padding: 5px;
+  position: absolute;
+  left: -10px;
 }
 .functioning li:hover {
-  background: #fff3fc;
+  background: #f2eafb;
 }
 .functioning li i {
   padding: 5px;
@@ -101,7 +103,7 @@ button:hover {
 }
 
 .container {
-  background: #eeededbb;
+  background: #eeeded;
   border-radius: 20px;
 }
 .container__title {
@@ -111,9 +113,11 @@ button:hover {
 .container__restaurant {
   display: flex;
   flex-wrap: wrap;
+  padding: 0 100px 50px 100px;
+  justify-content: space-around;
 }
 .container__restaurant-card {
-  width: 50%;
+  width: 45%;
 }
 .container__restaurant-card figure {
   background: #FFF;
@@ -128,7 +132,7 @@ button:hover {
 .container__restaurant-card figcaption {
   position: relative;
 }
-.container__restaurant-card h4, .container__restaurant-card p {
+.container__restaurant-card figcaption h4, .container__restaurant-card figcaption p {
   margin: 0;
   padding: 10px;
 }
@@ -142,6 +146,12 @@ button:hover {
 footer {
   background: #000;
 }
+footer a, footer i {
+  color: #FFF;
+}
+footer a:hover, footer i:hover {
+  color: #FF79DA;
+}
 footer h3 {
   color: #FFF;
   text-align: center;
@@ -150,12 +160,31 @@ footer ul {
   text-align: center;
   margin: 0;
   padding-bottom: 30px;
+  list-style-type: none;
 }
 footer li {
   margin: 5px;
 }
-footer a, footer i {
-  color: #FFF;
+.bg img {
+  height: 550px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.card {
+  background: #eeeded;
+  border-radius: 30px;
+  position: relative;
+  margin: -80px 20px 0 20px;
+}
+.card .title {
+  text-align: center;
+  font-size: 1.5rem;
+}
+.card__menu h4, .card__menu .container__restaurant-card p, .container__restaurant-card .card__menu p {
+  border-bottom: 2px solid #99E2D0;
+  width: 40px;
 }
 
 /*# sourceMappingURL=style.css.map */

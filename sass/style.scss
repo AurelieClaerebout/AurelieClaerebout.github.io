@@ -78,36 +78,37 @@ button
         justify-content: space-around;
         padding: 0;
     }
-}
-
-.functioning ol
-{
-    list-style-type: none;
+    ol{
+        list-style-type: none;
+    }
 }
 
 .functioning li
 {
     counter-increment: li;
     background: $color-background;
-    width: 30%;
+    width: 20%;
     height: 50px;
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
+    position: relative;
     &::before
     {
         content: counter(li);
         background: $color-primary;
-        display: inline-block;
-        width: 30px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
         border-radius: 50%;
         text-align: center;
+        padding: 5px;
+        position: absolute;
+        left: -10px;
     }
     &:hover{
-        background: lighten($color-secondary, 24);
+        background: lighten($color-primary, 35);
             }
     i 
     {
@@ -130,10 +131,13 @@ button
     &__restaurant{
            display: flex;
            flex-wrap: wrap;
+           padding: 0 100px 50px 100px;
+           justify-content: space-around;
            
     }
     &__restaurant-card{
-        width: 50%;
+        width: 45%;
+
         figure{
             background: #FFF;
             border-radius: 20px;
@@ -147,12 +151,13 @@ button
         }
         figcaption{
             position: relative;
+            h4{
+                margin: 0;
+                padding: 10px;
+                
+            }
         }
-        h4{
-            margin: 0;
-            padding: 10px;
-            
-        }
+        
         p{
             @extend h4
         }
@@ -167,6 +172,12 @@ button
 
 footer{
     background: #000;
+    a{
+        color: #FFF;
+        &:hover{
+            color: $color-secondary ;
+        }
+    }
     h3{
         color: #FFF;
         text-align: center;
@@ -175,14 +186,39 @@ footer{
         text-align: center;
         margin: 0;
         padding-bottom: 30px;
+        list-style-type: none;
     }
     li{
         margin: 5px;
     }
-    a{
-        color: #FFF;
-    }
+    
     i{
         @extend a;
+    }
+}
+.bg 
+{
+    img{
+    height: 550px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+    }
+    
+}
+.card{
+    background: $color-background;
+    border-radius: 30px;
+    position: relative;
+    margin: -80px 20px 0 20px;
+
+    .title{
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    &__menu h4 {
+        border-bottom: 2px solid $color-tertiary;
+        width: 40px;
     }
 }
