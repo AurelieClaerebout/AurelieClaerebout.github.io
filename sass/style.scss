@@ -102,11 +102,9 @@ button
     }
 }
 
-.container
-{
+.container{
     background: $color-background;
     padding-bottom: 30px;
-
     &__title{
         padding: 25px 0 0 15px;
     }
@@ -115,7 +113,7 @@ button
         height: 150px;
         object-fit: cover;
         
-        }
+    }
     .new{
         background: $color-tertiary;
         width: 80px;
@@ -132,36 +130,49 @@ button
             margin: 0;
             padding: 6px 0 5px 10px;
             }
-        }
         p{
             @extend h4
         }
-        .heart{
-            position: absolute;
-            right: 20px;
-            top: 15px;
-            font-size: 30px;
-            i{         
-                transition: all 0.2s ease-in-out;
-        
-                &:hover{
-                    background:-webkit-linear-gradient($color-secondary, $color-primary);
-                    -webkit-background-clip:text;
-                    color:transparent;
-                    font-weight: 600;
-                    
-                }
-            }
-        }
-
-    &__restaurant-card{
+    }
+    &__restaurant-card {
         background: #fff;
         margin: 15px;
         border-radius: 15px;
         overflow: hidden;
         position: relative;
     }
+}     
+        
+
+.heart{
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 30px;
+    i{         
+    transition: all 0.2s ease-in-out;
+        &:hover{
+        background:-webkit-linear-gradient($color-secondary, $color-primary);
+        -webkit-background-clip:text;
+        color:transparent;
+        font-weight: 600;
+        animation-name: animheart;
+        animation-duration: 2s;
+        }
+    }
 }
+
+ @keyframes animheart {
+         0%{
+             opacity: 0;
+         }
+
+         100%{
+             opacity: 100%;
+         }
+ }       
+    
+
 
 footer{
     background: darken($color: $color-background, $amount: 70);

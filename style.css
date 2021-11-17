@@ -122,21 +122,6 @@ button:hover {
   margin: 0;
   padding: 6px 0 5px 10px;
 }
-.container .heart {
-  position: absolute;
-  right: 20px;
-  top: 15px;
-  font-size: 30px;
-}
-.container .heart i {
-  transition: all 0.2s ease-in-out;
-}
-.container .heart i:hover {
-  background: -webkit-linear-gradient(#FF79DA, #9356DC);
-  -webkit-background-clip: text;
-  color: transparent;
-  font-weight: 600;
-}
 .container__restaurant-card {
   background: #fff;
   margin: 15px;
@@ -145,6 +130,32 @@ button:hover {
   position: relative;
 }
 
+.heart {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 30px;
+}
+.heart i {
+  transition: all 0.2s ease-in-out;
+}
+.heart i:hover {
+  background: -webkit-linear-gradient(#FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 600;
+  animation-name: animheart;
+  animation-duration: 2s;
+}
+
+@keyframes animheart {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
 footer {
   background: #3d3939;
   padding-bottom: 30px;
@@ -197,7 +208,7 @@ footer li {
 .card {
   padding: 10px;
 }
-.card__menu h4, .card__menu .container p, .container .card__menu p {
+.card__menu h4, .card__menu .container figcaption p, .container figcaption .card__menu p {
   border-bottom: 2px solid #99E2D0;
   width: 40px;
 }
