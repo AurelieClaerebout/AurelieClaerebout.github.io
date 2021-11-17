@@ -24,6 +24,7 @@ header a, header footer i, footer header i {
   text-align: center;
   font-weight: bold;
   height: 35px;
+  border-top: 2px solid #d5d3d3;
 }
 
 .menu {
@@ -48,6 +49,7 @@ button {
   font-size: 1rem;
   margin: 20px;
   color: #FFF;
+  box-shadow: 4px 4px 10px #b8b7b7;
 }
 button:hover {
   background: linear-gradient(#fface8, #ae80e5);
@@ -103,6 +105,16 @@ button:hover {
   height: 150px;
   object-fit: cover;
 }
+.container .new {
+  background: #99E2D0;
+  width: 80px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  text-align: center;
+  color: #278870;
+  font-weight: bold;
+}
 .container figcaption {
   position: relative;
 }
@@ -110,17 +122,27 @@ button:hover {
   margin: 0;
   padding: 6px 0 5px 10px;
 }
-.container i {
+.container .heart {
   position: absolute;
   right: 20px;
   top: 15px;
   font-size: 30px;
+}
+.container .heart i {
+  transition: all 0.2s ease-in-out;
+}
+.container .heart i:hover {
+  background: -webkit-linear-gradient(#FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 600;
 }
 .container__restaurant-card {
   background: #fff;
   margin: 15px;
   border-radius: 15px;
   overflow: hidden;
+  position: relative;
 }
 
 footer {
@@ -183,20 +205,52 @@ footer li {
 .meal {
   background: #FFF;
   border-radius: 15px;
-  width: 95%;
   margin: 15px 0;
+  overflow: hidden;
+  display: flex;
+  cursor: pointer;
+  box-shadow: 4px 4px 16px #b8b7b7;
+}
+.meal__info {
   padding: 10px;
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.meal__info__text {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .meal p {
   font-size: 0.8rem;
-  padding-top: 10px;
 }
 .meal__price {
-  position: absolute;
-  right: 10px;
-  top: 15px;
   font-weight: bold;
+}
+
+.check {
+  display: flex;
+  background: #99E2D0;
+  width: 70px;
+  align-items: center;
+  justify-content: center;
+  margin-right: -70px;
+  transition: 0.5s;
+}
+.check i {
+  color: #FFF;
+  transform: rotate(360deg);
+  transition: 0.7s;
+}
+
+.meal:hover .check {
+  margin-right: 0;
+}
+
+.meal:hover i {
+  transform: rotate(0deg);
 }
 
 .order-button {
