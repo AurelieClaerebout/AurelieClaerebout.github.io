@@ -1,45 +1,46 @@
 @import "./Utils/variables";
 
-*
-{
+*{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
     text-decoration: none;
     color: #000;
-    font-family: 'Roboto', sans-serif;
 }
 
-.logo, h3
-{
-    font-family: 'Shrikhand', cursive;
-}
-
-.logo, .search, .menu
-{
-    text-align: center;
-}
-
-.search
-{
-    background: darken($color-background, 5);
-    padding: 10px;
-}
-
-input[type="search"]
-{
-    border: none;
-    background: transparent;
-    font-weight: bold;
-    font-size: 1rem;
-}
-
-.menu
-{
-    background: $color-background;
-    padding: 40px 0 40px 0;
-    .menu_info
-    {
-        margin-top: 0;
-        font-size: 20px;
+header{
+    position: relative;
+    a{
+        position: absolute;
+        top: 10px;
+        left: 20px;
     }
+}
+
+.logo{
+    text-align: center;
+    margin: 5px;
+}
+
+.search{
+    background: darken($color-background, 5);
+    text-align: center;
+    font-weight: bold;
+    height: 35px; 
+    border-top: 2px solid darken($color-background, 10);   
+}
+
+.menu{
+    background: $color-background;
+    text-align: center;
+    padding: 20px;
+    h1{
+        font-size: 1.2rem;
+        padding: 20px 60px 10px;
+    }
+}
+
+input[type="search"] {
+    border: none;
 }
 
 button
@@ -48,104 +49,253 @@ button
     border-radius: 20px;
     padding: 10px;
     border: none;
-}
-
-
-.functioning
-{
-    &__title
-    {
-        text-align: center;
-    }
-    &__list
-    {
-        display: flex;
-        justify-content: space-around;
+    font-size: 1rem;
+    margin: 20px;
+    color: #FFF;
+    box-shadow: 4px 4px 10px #b8b7b7;
+    &:hover{
+        background: linear-gradient(lighten($color-secondary,10),lighten($color-primary, 10));
     }
 }
 
-ol
-{
-    list-style-type: none;
+.functioning{
+    &__title{
+        font-size: 1.5rem;
+        margin: 25px 0 15px 15px;
+    }
+    &__list{
+        padding: 0;
+        margin: 12px;
+    }
 }
 
-li
+.functioning li
 {
     counter-increment: li;
     background: $color-background;
-    width: 30%;
-    height: 50px;
-    border-radius: 20px;
+    height: 60px;
+    margin-bottom: 15px;
+    border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
+    position: relative;
     &::before
     {
         content: counter(li);
         background: $color-primary;
-        display: inline-block;
-        width: 30px;
-        height: 30px;
+        width: 20px;
         border-radius: 50%;
         text-align: center;
+        padding: 5px;
+        position: absolute;
+        left: -10px;
     }
     &:hover{
-        background: lighten($color-secondary, 24);
-            }
+        background: lighten($color-primary, 35);
+        }
     i 
     {
         padding: 5px;
-        &:hover{
-            color: $color-primary;
-        }
+        
     }
-
-
 }
 
-.container
-{
+.container{
     background: $color-background;
-
+    padding-bottom: 30px;
     &__title{
-        text-align: center;
-        ;
+        padding: 25px 0 0 15px;
     }
-    &__restaurant{
-           display: flex;
-           flex-wrap: wrap;
-           
-    }
-    &__restaurant-card{
-        width: 50%;
-        figure{
-            background: #FFF;
-            border-radius: 20px;
-            overflow: hidden;
-           
-        }
-        img{
+    img{
         width: 100%;
         height: 150px;
         object-fit: cover;
-        }
-        figcaption{
-            position: relative;
-        }
+        
+    }
+    .new{
+        background: $color-tertiary;
+        width: 80px;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        text-align: center;
+        color: darken($color-tertiary, 40);
+        font-weight: bold;
+    }
+    figcaption{
+        position: relative;
         h4{
             margin: 0;
-            padding: 10px;
-            
-        }
+            padding: 6px 0 5px 10px;
+            }
         p{
             @extend h4
+        }
+    }
+    &__restaurant-card {
+        background: #fff;
+        margin: 15px;
+        border-radius: 15px;
+        overflow: hidden;
+        position: relative;
+    }
+}     
+        
+
+.heart{
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 30px;
+    i{         
+    transition: all 0.2s ease-in-out;
+        &:hover{
+        background:-webkit-linear-gradient($color-secondary, $color-primary);
+        -webkit-background-clip:text;
+        color:transparent;
+        font-weight: 600;
+        animation-name: animheart;
+        animation-duration: 2s;
+        }
+    }
+}
+
+ @keyframes animheart {
+         0%{
+             opacity: 0;
+         }
+
+         100%{
+             opacity: 100%;
+         }
+ }       
+    
+
+
+footer{
+    background: darken($color: $color-background, $amount: 70);
+    padding-bottom: 30px;
+    
+    a{
+        color: #FFF;
+        &:hover{
+            color: $color-secondary ;
+        }
+    }
+    p{
+        color: #FFF;
+        padding: 20px 0 15px 15px;
+        font-family : 'Shrikhand', cursif ;
+        font-size: 1.5rem;
+    }
+    ul{
+        padding-left: 15px;
+        list-style-type: none;
+    }
+    li{
+        margin-top: 5px;
+    }
+    
+    i{
+        @extend a;
+    }
+}
+
+.bg 
+{
+    img{
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    }
+}
+
+
+.container-menu{
+    background: $color-background;
+    border-radius: 30px 30px 0 0;
+    position: relative;
+    margin-top: -50px;
+
+    .title{
+        padding: 10px 0 20px 20px;
+        font-size: 1.2rem;
+        position: relative;
+    
+        h3{
+            font-family : 'Shrikhand', cursif;
         }
         i{
             position: absolute;
             right: 20px;
-            top: 25px;
-            font-size: 30px;
+            top: 16px;
         }
     }
 }
+
+.card{
+    padding: 10px;
+    &__menu h4 {
+        border-bottom: 2px solid $color-tertiary;
+        width: 40px;
+    }
+}
+
+.meal{
+    background: #FFF;
+    border-radius: 15px;
+    margin: 15px 0;
+    overflow: hidden;
+    display: flex;
+    cursor: pointer;
+    box-shadow: 4px 4px 16px #b8b7b7;
+    
+    &__info{
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+        &__text{
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+    p{
+        font-size: 0.8rem;
+    }
+    &__price{
+        font-weight: bold;
+    }
+}
+
+.check{
+    display: flex;
+    background: $color-tertiary;
+    width: 70px;
+    align-items: center;
+    justify-content: center;
+    margin-right: -70px;
+    transition: 0.5s;
+    
+    i{
+        color: #FFF;
+        transform: rotate(360deg);
+        transition: 0.7s;
+    }
+}
+
+.meal:hover .check{
+    margin-right: 0;
+}
+.meal:hover i{
+    transform: rotate(0deg);
+}
+
+.order-button{
+    text-align: center;
+}
+
