@@ -1,4 +1,5 @@
 @import "./Utils/variables";
+@import "./utils/mixins";
 
 body {
     margin: 0;
@@ -77,7 +78,7 @@ header {
     position: relative;
     a{
         position: absolute;
-        top: 10px;
+        top: 15px;
         left: 20px;
     }
 }
@@ -107,7 +108,6 @@ header {
 
 input[type="search"] {
     border: none;
-    background: darken($color-background, 5)
 }
 
 
@@ -212,12 +212,21 @@ button {
             @extend h4
         }
     }
+    &__restaurant {
+        @include desktop {
+            display: flex;
+            
+        }
+    }
     &__restaurant-card {
         background-color: #FFF;
         margin: 15px;
         border-radius: 15px;
         overflow: hidden;
         position: relative;
+        @include desktop {
+            width: 100%;
+        }
     }
 }     
         
@@ -228,7 +237,8 @@ button {
     top: 15px;
     font-size: 30px;
     color: #FFF;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow: -2px 0 black, 0 3px black, 2px 0 black, 0 -2px black;
     &:hover {
             color: $color-primary;
             background: linear-gradient($color-secondary, $color-primary);
@@ -281,7 +291,9 @@ footer {
         @extend a;
     }
 }
-
+.logo{
+    font-family : 'Shrikhand', cursif;
+}
 .bg {
     img {
     height: 250px;
@@ -302,15 +314,17 @@ footer {
         font-size: 1.2rem;
         position: relative;
     
-        h3 {
+        h2 {
             font-family : 'Shrikhand', cursif;
         }
         i {
             position: absolute;
+            font-size: 1.5rem;
             right: 20px;
-            top: 35px;
+            top: 42px;
             color: $color-background;
-            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            text-shadow: -2px 0 black, 0 3px black, 2px 0 black, 0 -2px black;
             &:hover {
                 color: $color-primary;
                 background: linear-gradient($color-secondary, $color-primary);
@@ -326,9 +340,18 @@ footer {
 
 .card {
     padding: 10px;
-    &__menu h4 {
+    @include desktop {
+        display: flex;
+        justify-content: space-around;
+    }
+    &__menu{
+        @include desktop {
+            width: 30%;
+    }
+    h3 {
         border-bottom: 2px solid $color-tertiary;
         width: 40px;
+        }
     }
 }
 
@@ -347,23 +370,64 @@ footer {
         justify-content: space-between;
         width: 100%;
         align-items: center;
+        white-space: nowrap;
+        overflow: hidden;
+       
         &__text {
-            white-space: nowrap;
-            text-overflow: ellipsis;
             overflow: hidden;
         }
+        &__title {
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        &__desc {
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
     }
-    h5 {
-        margin: 0;
-    }
-    p {
-        font-size: 0.8rem;
-        margin: 0;
-    }
+    
+    
     &__price {
         font-weight: bold;
+        padding-left: 20px;
     }
 }
+
+.anim1{
+    animation-duration: 1.5s;
+    animation-delay: 0.3s;
+    animation-name: glissement;
+}
+
+.anim2{
+    animation-duration: 1.5s;
+    animation-delay: 0.6s;
+    animation-name: glissement;
+}
+
+.anim3{
+    animation-duration: 1.5s;
+    animation-delay: 0.9s;
+    animation-name: glissement;
+}
+
+
+
+@keyframes glissement {
+    from {
+        width: 0%;   
+    }
+  
+    to {
+        width: 100%;
+    }
+  }
+
+
 
 .check {
     display: flex;

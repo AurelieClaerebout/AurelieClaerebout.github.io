@@ -62,7 +62,7 @@ header {
 }
 header a, header footer i, footer header i {
   position: absolute;
-  top: 10px;
+  top: 15px;
   left: 20px;
 }
 
@@ -72,15 +72,15 @@ header a, header footer i, footer header i {
 }
 
 .search {
-  background: rgba(226, 226, 226, 0.6117647059);
+  background: #e9e9e9;
   text-align: center;
   font-weight: bold;
   height: 35px;
-  border-top: 2px solid rgba(214, 214, 214, 0.6117647059);
+  border-top: 2px solid #dddddd;
 }
 
 .menu {
-  background: #efefef9c;
+  background: #f6f6f6;
   text-align: center;
   padding: 20px;
 }
@@ -91,7 +91,6 @@ header a, header footer i, footer header i {
 
 input[type=search] {
   border: none;
-  background: rgba(226, 226, 226, 0.6117647059);
 }
 
 a, footer i {
@@ -123,7 +122,7 @@ button:hover {
 }
 
 .functioning li {
-  background: #efefef9c;
+  background: #f6f6f6;
   height: 60px;
   margin-bottom: 15px;
   border-radius: 15px;
@@ -154,7 +153,7 @@ button:hover {
 }
 
 .container {
-  background: #efefef9c;
+  background: #f6f6f6;
   padding-bottom: 50px;
 }
 .container__title {
@@ -185,12 +184,22 @@ button:hover {
   margin: 0;
   padding: 6px 0 5px 10px;
 }
+@media (min-width: 1200px) {
+  .container__restaurant {
+    display: flex;
+  }
+}
 .container__restaurant-card {
   background-color: #FFF;
   margin: 15px;
   border-radius: 15px;
   overflow: hidden;
   position: relative;
+}
+@media (min-width: 1200px) {
+  .container__restaurant-card {
+    width: 100%;
+  }
 }
 
 .heart {
@@ -199,7 +208,7 @@ button:hover {
   top: 15px;
   font-size: 30px;
   color: #FFF;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-shadow: -2px 0 black, 0 3px black, 2px 0 black, 0 -2px black;
 }
 .heart:hover {
   color: #9356DC;
@@ -219,7 +228,7 @@ button:hover {
   }
 }
 footer {
-  background: rgba(61, 61, 61, 0.6117647059);
+  background: #444444;
   padding-bottom: 30px;
 }
 footer a, footer i {
@@ -242,6 +251,10 @@ footer ul {
 footer li {
   margin-top: 5px;
 }
+.logo {
+  font-family: "Shrikhand", cursif;
+}
+
 .bg img {
   height: 250px;
   width: 100%;
@@ -249,7 +262,7 @@ footer li {
 }
 
 .container-menu {
-  background: #efefef9c;
+  background: #f6f6f6;
   border-radius: 30px 30px 0 0;
   position: relative;
   margin-top: -50px;
@@ -259,15 +272,16 @@ footer li {
   font-size: 1.2rem;
   position: relative;
 }
-.container-menu .title h3 {
+.container-menu .title h2 {
   font-family: "Shrikhand", cursif;
 }
 .container-menu .title i {
   position: absolute;
+  font-size: 1.5rem;
   right: 20px;
-  top: 35px;
-  color: #efefef9c;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  top: 42px;
+  color: #f6f6f6;
+  text-shadow: -2px 0 black, 0 3px black, 2px 0 black, 0 -2px black;
 }
 .container-menu .title i:hover {
   color: #9356DC;
@@ -281,7 +295,18 @@ footer li {
 .card {
   padding: 10px;
 }
-.card__menu h4, .card__menu .container figcaption p, .container figcaption .card__menu p {
+@media (min-width: 1200px) {
+  .card {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+@media (min-width: 1200px) {
+  .card__menu {
+    width: 30%;
+  }
+}
+.card__menu h3 {
   border-bottom: 2px solid #99E2D0;
   width: 40px;
 }
@@ -301,23 +326,55 @@ footer li {
   justify-content: space-between;
   width: 100%;
   align-items: center;
-}
-.meal__info__text {
   white-space: nowrap;
-  text-overflow: ellipsis;
   overflow: hidden;
 }
-.meal h5 {
-  margin: 0;
+.meal__info__text {
+  overflow: hidden;
 }
-.meal p {
-  font-size: 0.8rem;
+.meal__info__title {
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.meal__info__desc {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .meal__price {
   font-weight: bold;
+  padding-left: 20px;
 }
 
+.anim1 {
+  animation-duration: 1.5s;
+  animation-delay: 0.3s;
+  animation-name: glissement;
+}
+
+.anim2 {
+  animation-duration: 1.5s;
+  animation-delay: 0.6s;
+  animation-name: glissement;
+}
+
+.anim3 {
+  animation-duration: 1.5s;
+  animation-delay: 0.9s;
+  animation-name: glissement;
+}
+
+@keyframes glissement {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
 .check {
   display: flex;
   background: #99E2D0;
