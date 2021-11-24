@@ -1,27 +1,94 @@
 @import "./Utils/variables";
+@import "./utils/mixins";
 
-*{
+body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    text-decoration: none;
-    color: #000;
 }
 
-header{
+
+.loading{
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: hsl(0deg 0% 100% / 90%);
+    animation: loader 2s both;
+    
+
+
+    &__spinner{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;  
+        border-right: 8px solid $color-primary;
+        border-left: 8px solid $color-secondary;
+        animation: spin 1s linear infinite;
+    
+        
+        
+    }
+
+    &__spinner2{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%; 
+        border-right: 6px solid $color-tertiary;
+        border-left: 6px solid $color-tertiary;
+        animation: spin-reverse 0.5s linear infinite;
+        
+    }
+    
+}
+
+@keyframes spin {
+    0% { 
+        transform: rotate(0deg); 
+    }
+    100% { 
+        transform: rotate(360deg); 
+    }
+}
+
+@keyframes spin-reverse {
+    0% { 
+        transform: rotate(360deg); 
+    }
+    100% { 
+        transform: rotate(0deg); 
+    }
+}
+
+@keyframes loader {
+    
+    80% {
+        opacity: 1;
+        z-index: 1;
+    }
+    100% {
+        opacity: 0;
+        z-index: -2;
+    }
+}
+
+header {
     position: relative;
     a{
         position: absolute;
-        top: 10px;
+        top: 15px;
         left: 20px;
     }
 }
 
-.logo{
+.logo {
     text-align: center;
     margin: 5px;
 }
 
-.search{
+.search {
     background: darken($color-background, 5);
     text-align: center;
     font-weight: bold;
@@ -29,11 +96,11 @@ header{
     border-top: 2px solid darken($color-background, 10);   
 }
 
-.menu{
+.menu {
     background: $color-background;
     text-align: center;
     padding: 20px;
-    h1{
+    h1 {
         font-size: 1.2rem;
         padding: 20px 60px 10px;
     }
@@ -43,8 +110,13 @@ input[type="search"] {
     border: none;
 }
 
-button
-{
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+button {
     background: linear-gradient($color-secondary, $color-primary);
     border-radius: 20px;
     padding: 10px;
@@ -53,25 +125,28 @@ button
     margin: 20px;
     color: #FFF;
     box-shadow: 4px 4px 10px #b8b7b7;
-    &:hover{
+    &:hover {
         background: linear-gradient(lighten($color-secondary,10),lighten($color-primary, 10));
     }
 }
 
-.functioning{
-    &__title{
+.functioning {
+    &__title {
         font-size: 1.5rem;
         margin: 25px 0 15px 15px;
     }
-    &__list{
+    &__list {
         padding: 0;
         margin: 12px;
+        @include desktop {
+            display: flex;
+            justify-content: space-around;
+        }
     }
 }
 
-.functioning li
-{
-    counter-increment: li;
+.functioning li {
+    
     background: $color-background;
     height: 60px;
     margin-bottom: 15px;
@@ -81,40 +156,53 @@ button
     align-items: center;
     font-weight: bold;
     position: relative;
-    &::before
-    {
-        content: counter(li);
-        background: $color-primary;
-        width: 20px;
-        border-radius: 50%;
-        text-align: center;
-        padding: 5px;
-        position: absolute;
-        left: -10px;
+    @include desktop {
+        width: 30%;
     }
-    &:hover{
+    &:hover {
         background: lighten($color-primary, 35);
         }
-    i 
-    {
+    i {
         padding: 5px;
+        &:hover{
+            color: $color-primary;
+        }
         
     }
 }
 
-.container{
+.number{
+        
+    background: $color-primary;
+    width: 20px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 5px;
+    position: absolute;
+    left: -10px;
+
+}
+
+
+.container {
     background: $color-background;
-    padding-bottom: 30px;
-    &__title{
+    padding-bottom: 50px;
+    &__title {
         padding: 25px 0 0 15px;
     }
-    img{
+    figure {
+        margin: 0;
+    }
+    img {
         width: 100%;
         height: 150px;
         object-fit: cover;
+        @include desktop {
+            height: 200px;
+        }
         
     }
-    .new{
+    .new {
         background: $color-tertiary;
         width: 80px;
         position: absolute;
@@ -124,126 +212,177 @@ button
         color: darken($color-tertiary, 40);
         font-weight: bold;
     }
-    figcaption{
+    figcaption {
         position: relative;
-        h4{
+        h4 {
             margin: 0;
-            padding: 6px 0 5px 10px;
+            padding: 6px 0 8px 10px;
             }
-        p{
+        p {
             @extend h4
         }
     }
+    &__restaurant {
+        @include tablet {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        @include desktop {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+    }
     &__restaurant-card {
-        background: #fff;
+        background-color: #FFF;
         margin: 15px;
         border-radius: 15px;
         overflow: hidden;
         position: relative;
+        @include tablet {
+            width: 40%;
+        }
+        @include desktop {
+            width: 40%;
+        }
     }
 }     
         
 
-.heart{
+.heart {
     position: absolute;
     right: 20px;
     top: 15px;
     font-size: 30px;
-    i{         
-    transition: all 0.2s ease-in-out;
-        &:hover{
-        background:-webkit-linear-gradient($color-secondary, $color-primary);
-        -webkit-background-clip:text;
-        color:transparent;
-        font-weight: 600;
-        animation-name: animheart;
-        animation-duration: 2s;
+    color: #FFF;
+    // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2.5px black;
+    &:hover {
+            color: $color-primary;
+            background: linear-gradient($color-secondary, $color-primary);
+            text-shadow: none;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            animation: animheart 3s linear;
+
         }
-    }
 }
 
  @keyframes animheart {
-         0%{
+         0% {
              opacity: 0;
-         }
+        }
 
-         100%{
+         100% {
              opacity: 100%;
-         }
+        }
  }       
     
 
 
-footer{
+footer {
     background: darken($color: $color-background, $amount: 70);
     padding-bottom: 30px;
     
-    a{
+    a {
         color: #FFF;
         &:hover{
             color: $color-secondary ;
         }
     }
-    p{
+    p {
         color: #FFF;
         padding: 20px 0 15px 15px;
         font-family : 'Shrikhand', cursif ;
         font-size: 1.5rem;
+        margin: 0;
     }
-    ul{
+    ul {
         padding-left: 15px;
         list-style-type: none;
     }
-    li{
+    li {
         margin-top: 5px;
     }
     
-    i{
+    i {
         @extend a;
     }
 }
-
-.bg 
-{
-    img{
+.logo{
+    font-family : 'Shrikhand', cursif;
+}
+.bg {
+    img {
     height: 250px;
     width: 100%;
     object-fit: cover;
+    @include desktop {
+        height: 600px;
+    }
     }
 }
 
 
-.container-menu{
+.container-menu {
     background: $color-background;
     border-radius: 30px 30px 0 0;
     position: relative;
     margin-top: -50px;
+    @include desktop {
+        width: 80%;
+        margin: auto;
+        margin-top: -60px;
+    }
 
-    .title{
+    .title {
         padding: 10px 0 20px 20px;
         font-size: 1.2rem;
         position: relative;
     
-        h3{
+        h2 {
             font-family : 'Shrikhand', cursif;
         }
-        i{
+        i {
             position: absolute;
-            right: 20px;
-            top: 16px;
+            font-size: 1.5rem;
+            right: 30px;
+            top: 42px;
+            color: $color-background;
+            // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2.5px black;
+            &:hover {
+                color: $color-primary;
+                background: linear-gradient($color-secondary, $color-primary);
+                text-shadow: none;
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                animation: animheart 2.5s linear;
+    
+            }
         }
     }
 }
 
-.card{
+.card {
     padding: 10px;
-    &__menu h4 {
+    @include desktop {
+        display: flex;
+        justify-content: space-around;
+    }
+    &__menu{
+        @include desktop {
+            width: 30%;
+    }
+    h3 {
         border-bottom: 2px solid $color-tertiary;
         width: 40px;
+        }
     }
 }
 
-.meal{
+.meal {
     background: #FFF;
     border-radius: 15px;
     margin: 15px 0;
@@ -252,27 +391,79 @@ footer{
     cursor: pointer;
     box-shadow: 4px 4px 16px #b8b7b7;
     
-    &__info{
+    &__info {
         padding: 10px;
         display: flex;
         justify-content: space-between;
         width: 100%;
         align-items: center;
-        &__text{
-            white-space: nowrap;
-            text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+       
+        &__text {
             overflow: hidden;
         }
+        &__title {
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        &__desc {
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
     }
-    p{
-        font-size: 0.8rem;
-    }
-    &__price{
+    
+    
+    &__price {
         font-weight: bold;
+        padding-left: 20px;
     }
 }
 
-.check{
+.anim1{
+    animation-duration: 1.5s;
+    animation-delay: 0.2s;
+    animation-name: glissement;
+}
+
+.anim2{
+    animation-duration: 1.5s;
+    animation-delay: 0.4s;
+    animation-name: glissement;
+}
+
+.anim3{
+    animation-duration: 1.5s;
+    animation-delay: 0.6s;
+    animation-name: glissement;
+}
+
+.anim4{
+    animation-duration: 1.5s;
+    animation-delay: 0.8s;
+    animation-name: glissement;
+}
+
+
+@keyframes glissement {
+    from {
+        width: 0%;   
+    }
+  
+    to {
+        width: 100%;
+    }
+  }
+
+
+
+
+
+.check {
     display: flex;
     background: $color-tertiary;
     width: 70px;
@@ -281,21 +472,21 @@ footer{
     margin-right: -70px;
     transition: 0.5s;
     
-    i{
+    i {
         color: #FFF;
         transform: rotate(360deg);
         transition: 0.7s;
     }
 }
 
-.meal:hover .check{
+.meal:hover .check {
     margin-right: 0;
 }
-.meal:hover i{
+.meal:hover i {
     transform: rotate(0deg);
 }
 
-.order-button{
+.order-button {
     text-align: center;
 }
 
