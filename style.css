@@ -110,6 +110,7 @@ button {
 }
 button:hover {
   background: linear-gradient(#fface8, #ae80e5);
+  box-shadow: 5px 5px 4px #b8b7b7;
 }
 
 .functioning__title {
@@ -229,6 +230,9 @@ button:hover {
 @media (min-width: 1200px) {
   .container__restaurant-card {
     width: 40%;
+  }
+  .container__restaurant-card:hover {
+    width: 42%;
   }
 }
 
