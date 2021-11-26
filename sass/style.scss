@@ -4,8 +4,12 @@
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
+   
 }
-
+a {
+    color: black;
+    text-decoration: none;
+}
 
 .loading{
     z-index: 1;
@@ -110,25 +114,8 @@ input[type="search"] {
     border: none;
 }
 
-
-a {
-    color: #000;
-    text-decoration: none;
-}
-
 button {
-    background: linear-gradient($color-secondary, $color-primary);
-    border-radius: 20px;
-    padding: 10px;
-    border: none;
-    font-size: 1rem;
-    margin: 20px;
-    color: #FFF;
-    box-shadow: 4px 4px 10px #b8b7b7;
-    &:hover {
-        background: linear-gradient(lighten($color-secondary,10),lighten($color-primary, 10));
-        box-shadow: 5px 5px 4px #b8b7b7;
-    }
+    @include button
 }
 
 .functioning {
@@ -144,6 +131,7 @@ button {
             justify-content: space-around;
         }
     }
+
 }
 
 .functioning li {
@@ -154,26 +142,27 @@ button {
     border-radius: 15px;
     display: flex;
     justify-content: center;
-    align-items: center;
     font-weight: bold;
     position: relative;
     @include desktop {
         width: 30%;
     }
+    .fas {
+        align-self: center
+        ;
+    }
+    p {
+        margin: 20px;
+    }
     &:hover {
         background: lighten($color-primary, 35);
-        }
-    i {
-        padding: 5px;
-        &:hover{
-            color: $color-primary;
-        }
-        
+    }
+    &:hover .fas{
+        color: $color-primary;
     }
 }
 
 .number{
-        
     background: $color-primary;
     width: 20px;
     border-radius: 50%;
@@ -181,9 +170,14 @@ button {
     padding: 5px;
     position: absolute;
     left: -10px;
-
+    top: 15px;
+    color: #FFF;
 }
 
+.function {
+    display: flex;
+    
+}
 
 .container {
     background: $color-background;
@@ -212,6 +206,7 @@ button {
         text-align: center;
         color: darken($color-tertiary, 40);
         font-weight: bold;
+        padding: 6px;
     }
     figcaption {
         position: relative;
@@ -252,15 +247,14 @@ button {
     }
 }     
         
-
 .heart {
     position: absolute;
     right: 20px;
-    top: 15px;
-    font-size: 30px;
+    bottom: 20px;
+    font-size: 25px;
     color: #FFF;
-    // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2.5px black;
+    cursor: pointer;
     &:hover {
             color: $color-primary;
             background: linear-gradient($color-secondary, $color-primary);
@@ -283,7 +277,6 @@ button {
  }       
     
 
-
 footer {
     background: darken($color: $color-background, $amount: 70);
     padding-bottom: 30px;
@@ -294,12 +287,13 @@ footer {
             color: $color-secondary ;
         }
     }
-    p {
+    h5 {
         color: #FFF;
         padding: 20px 0 15px 15px;
         font-family : 'Shrikhand', cursif ;
         font-size: 1.5rem;
         margin: 0;
+        font-weight: 500;
     }
     ul {
         padding-left: 15px;
@@ -309,10 +303,17 @@ footer {
         margin-top: 5px;
     }
     
-    i {
+    .fas {
         @extend a;
+        margin-right: 3px;
+        width: 1.3rem;
     }
 }
+
+
+
+
+
 .logo{
     font-family : 'Shrikhand', cursif;
 }
@@ -340,20 +341,20 @@ footer {
     }
 
     .title {
-        padding: 10px 0 20px 20px;
+        padding: 10px 0 0 20px;
         font-size: 1.2rem;
         position: relative;
     
         h2 {
             font-family : 'Shrikhand', cursif;
         }
-        i {
+        .fas {
             position: absolute;
             font-size: 1.5rem;
             right: 30px;
             top: 42px;
+            cursor: pointer;
             color: $color-background;
-            // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
             text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2.5px black;
             &:hover {
                 color: $color-primary;
@@ -381,6 +382,7 @@ footer {
     h3 {
         border-bottom: 2px solid $color-tertiary;
         width: 40px;
+        font-weight: normal;
         }
     }
 }
@@ -393,13 +395,11 @@ footer {
     display: flex;
     cursor: pointer;
     box-shadow: 4px 4px 16px #b8b7b7;
+    animation: slide 1.5s linear both;
     
     &__info {
         padding: 10px;
-        display: flex;
-        justify-content: space-between;
         width: 100%;
-        align-items: center;
         white-space: nowrap;
         overflow: hidden;
        
@@ -413,58 +413,48 @@ footer {
             text-overflow: ellipsis;
         }
         &__desc {
-            margin: 0;
+            display: flex;
+            justify-content: space-between;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
     }
+    &__desc {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }  
     
     
     &__price {
         font-weight: bold;
-        padding-left: 20px;
+        padding-left: 10px;
     }
 }
-
-.anim1{
-    animation-duration: 1.5s;
-    animation-delay: 0.2s;
-    animation-name: sliding;
-}
-
-.anim2{
-    animation-duration: 1.5s;
+.slide-delay1 {
     animation-delay: 0.4s;
-    animation-name: sliding;
 }
-
-.anim3{
-    animation-duration: 1.5s;
-    animation-delay: 0.6s;
-    animation-name: sliding;
-}
-
-.anim4{
-    animation-duration: 1.5s;
+.slide-delay2 {
     animation-delay: 0.8s;
-    animation-name: sliding;
+}
+.slide-delay3 {
+    animation-delay: 1.2s;
 }
 
-
-@keyframes sliding {
-    from {
-        width: 0%;   
+  @keyframes slide {
+    0% {
+        transform: translateY(1000px);
+        opacity: 0;
     }
-  
-    to {
-        width: 100%;
+    80% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
     }
   }
-
-
-
-
 
 .check {
     display: flex;
