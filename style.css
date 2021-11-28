@@ -91,7 +91,11 @@ header a, header footer .fas, footer header .fas {
 }
 .menu h1 {
   font-size: 1.2rem;
-  padding: 20px 60px 10px;
+  padding: 10px 60px 10px;
+  margin: 0;
+}
+.menu__info {
+  margin: 0;
 }
 
 input[type=search] {
@@ -101,7 +105,7 @@ input[type=search] {
 button {
   background: linear-gradient(#FF79DA, #9356DC);
   border-radius: 25px;
-  padding: 15px 30px;
+  padding: 15px 25px;
   border: none;
   font-size: 0.9rem;
   margin: 20px;
@@ -114,8 +118,14 @@ button:hover {
 }
 
 .functioning__title {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin: 25px 0 15px 15px;
+}
+@media (min-width: 600px) {
+  .functioning__title {
+    text-align: center;
+    margin: 35px 0;
+  }
 }
 .functioning__list {
   padding: 0;
@@ -133,8 +143,7 @@ button:hover {
   height: 60px;
   margin-bottom: 15px;
   border-radius: 15px;
-  display: flex;
-  justify-content: center;
+  list-style-type: none;
   font-weight: bold;
   position: relative;
 }
@@ -144,10 +153,22 @@ button:hover {
   }
 }
 .functioning li .fas {
-  align-self: center;
+  padding: 20px 40px 20px 60px;
+}
+@media (min-width: 600px) {
+  .functioning li .fas {
+    padding: 20px;
+  }
 }
 .functioning li p {
-  margin: 20px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 600px) {
+  .functioning li p {
+    font-size: 1rem;
+  }
 }
 .functioning li:hover {
   background: #f2eafb;
@@ -171,6 +192,11 @@ button:hover {
 .function {
   display: flex;
 }
+@media (min-width: 600px) {
+  .function {
+    justify-content: center;
+  }
+}
 
 .container {
   background: #f6f6f6;
@@ -178,6 +204,11 @@ button:hover {
 }
 .container__title {
   padding: 25px 0 0 15px;
+}
+@media (min-width: 600px) {
+  .container__title {
+    text-align: center;
+  }
 }
 .container figure {
   margin: 0;
@@ -210,7 +241,7 @@ button:hover {
   margin: 0;
   padding: 6px 0 8px 10px;
 }
-@media (min-width: 600px) and (max-width: 1199px) {
+@media (min-width: 600px) {
   .container__restaurant {
     display: flex;
     flex-wrap: wrap;
@@ -231,12 +262,7 @@ button:hover {
   overflow: hidden;
   position: relative;
 }
-@media (min-width: 600px) and (max-width: 1199px) {
-  .container__restaurant-card {
-    width: 40%;
-  }
-}
-@media (min-width: 1200px) {
+@media (min-width: 600px) {
   .container__restaurant-card {
     width: 40%;
   }
@@ -333,12 +359,14 @@ footer .fas {
 }
 .container-menu .title h2 {
   font-family: "Shrikhand", cursif;
+  font-weight: 500;
+  font-size: 1.5rem;
 }
 .container-menu .title .fas {
   position: absolute;
   font-size: 1.5rem;
   right: 30px;
-  top: 42px;
+  top: 31px;
   cursor: pointer;
   color: #f6f6f6;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2.5px black;
@@ -396,6 +424,7 @@ footer .fas {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 1.1rem;
 }
 .meal__info__desc {
   display: flex;
@@ -403,15 +432,18 @@ footer .fas {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 0.9rem;
 }
 .meal__desc {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin: 10px 0 0 0;
 }
 .meal__price {
   font-weight: bold;
   padding-left: 10px;
+  margin: 10px 0 0 0;
 }
 
 .slide-delay1 {
@@ -464,6 +496,7 @@ footer .fas {
 
 .order-button {
   text-align: center;
+  padding: 15px 35px;
 }
 
 /*# sourceMappingURL=style.css.map */
