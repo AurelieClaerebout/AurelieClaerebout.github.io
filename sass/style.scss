@@ -1,5 +1,6 @@
 @import "./Utils/variables";
 @import "./utils/mixins";
+@import "./components/buttons";
 
 body {
     margin: 0;
@@ -47,7 +48,6 @@ a {
     }
     
 }
-
 @keyframes spin {
     0% { 
         transform: rotate(0deg); 
@@ -288,18 +288,7 @@ button {
 
         }
 }
-
- @keyframes animheart {
-         0% {
-             opacity: 0;
-        }
-
-         100% {
-             opacity: 100%;
-        }
- }       
-    
-
+ 
 footer {
     background: darken($color: $color-background, $amount: 70);
     padding-bottom: 30px;
@@ -383,6 +372,9 @@ footer {
             font-weight: 500;
             font-size: 1.5rem;
             margin: 20px 0 0 0;
+            @include desktop {
+                padding-left: 25px;
+            }
         }
         .fas {
             position: absolute;
@@ -419,42 +411,9 @@ footer {
             border-bottom: 2px solid $color-tertiary;
             width: 40px;
             font-weight: normal;
-            }
-        &__item {
-            animation: slide 2.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-            // animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-        }
+            }    
     }   
 }
-.slide-delay1 {
-    animation-delay: 0.4s;
-}
-.slide-delay2 {
-    animation-delay: 0.8s;
-}
-
-
-  @keyframes slide {
-    0% {
-        transform: translateY(1000px);
-        opacity: 0;
-    }
-    90% {
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-  }
-//   @keyframes fade-in {
-//     0% {
-//       opacity: 0;
-//     }
-//     100% {
-//       opacity: 1;
-//     }
-//   }
 
 .meal {
     background: #FFF;
@@ -464,6 +423,7 @@ footer {
     display: flex;
     cursor: pointer;
     box-shadow: 4px 4px 16px #b8b7b7;
+    animation: moveitems 800ms both ease-in-out;
     
     &__info {
         padding: 10px;
@@ -505,6 +465,52 @@ footer {
     }
 }
 
+@keyframes moveitems {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+.meal__entree {
+    &:nth-of-type(1) {
+        animation-delay: 0ms;
+    }
+    &:nth-of-type(2) {
+        animation-delay: 200ms;
+    }
+    &:nth-of-type(3) {
+        animation-delay: 400ms;
+    }
+    &:nth-of-type(4) {
+        animation-delay: 600ms;
+    }
+}
+.meal__plat {
+    &:nth-of-type(1) {
+        animation-delay: 200ms;
+    }
+    &:nth-of-type(2) {
+        animation-delay: 400ms;
+    }
+    &:nth-of-type(3) {
+        animation-delay: 600ms;
+    }
+}
+.meal__dessert {
+    &:nth-of-type(1) {
+        animation-delay: 400ms;
+    }
+    &:nth-of-type(2) {
+        animation-delay: 600ms;
+    }
+    &:nth-of-type(3) {
+        animation-delay: 800ms;
+    }
+}
 
 .check {
     display: flex;

@@ -1,29 +1,22 @@
-  @mixin tablet {
-    @media (min-width: 600px)  {
-      @content;
-    }
+@mixin tablet {
+  @media (min-width: 600px)  {
+    @content;
   }
+}
   
-  @mixin desktop {
-    @media (min-width: 1200px) {
-      @content;
-    }
+@mixin desktop {
+  @media (min-width: 1200px) {
+    @content;
   }
+}
 
-  @mixin button {
-    background: linear-gradient($color-secondary, $color-primary);
-    border-radius: 25px;
-    padding: 15px 25px;
-    border: none;
-    font-size: 0.9rem;
-    margin: 20px;
-    color: #FFF;
-    box-shadow: 4px 4px 10px #b8b7b7;
-    cursor: pointer;
-    &:hover {
-        background: linear-gradient(lighten($color-secondary,10),lighten($color-primary, 10));
-        box-shadow: 5px 5px 4px #b8b7b7;
+@keyframes animheart {
+  0% {
+      opacity: 0;
     }
-  }
+  100% {
+      opacity: 100%;
+    }
+}      
 
   // and (max-width: 1199px)
