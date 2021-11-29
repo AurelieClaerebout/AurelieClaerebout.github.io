@@ -80,9 +80,12 @@ a {
 
 header {
     position: relative;
-    a{
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    .fas {
         position: absolute;
-        top: 15px;
+        top: 10px;
         left: 20px;
     }
 }
@@ -97,7 +100,8 @@ header {
     text-align: center;
     font-weight: bold;
     height: 35px; 
-    border-top: 2px solid darken($color-background, 10);   
+    border-top: 2px solid darken($color-background, 10); 
+    color: #363535;  
 }
 
 .menu {
@@ -116,6 +120,7 @@ header {
 
 input[type="search"] {
     border: none;
+    
 }
 
 button {
@@ -133,7 +138,8 @@ button {
     }
     &__list {
         padding: 0;
-        margin: 12px;
+        width: 85%;
+        margin: auto;
         @include desktop {
             display: flex;
             justify-content: space-around;
@@ -146,7 +152,7 @@ button {
     background: $color-background;
     height: 60px;
     margin-bottom: 15px;
-    border-radius: 15px;
+    border-radius: 20px;
     list-style-type: none;
     font-weight: bold;
     position: relative;
@@ -181,11 +187,12 @@ button {
     width: 20px;
     border-radius: 50%;
     text-align: center;
-    padding: 5px;
+    padding: 3px;
     position: absolute;
     left: -10px;
     top: 15px;
     color: #FFF;
+    font-weight: normal;
 }
 
 .function {
@@ -256,6 +263,7 @@ button {
         border-radius: 15px;
         overflow: hidden;
         position: relative;
+        box-shadow: 4px 4px 16px #b8b7b7;
         @include tablet {
             width: 40%;
         }
@@ -266,7 +274,7 @@ button {
     position: absolute;
     right: 20px;
     bottom: 20px;
-    font-size: 25px;
+    font-size: 20px;
     color: #FFF;
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2.5px black;
     cursor: pointer;
@@ -298,8 +306,11 @@ footer {
     
     a {
         color: #FFF;
-        &:hover{
-            color: $color-secondary ;
+        &:hover .fas {
+            color: $color-secondary;
+        }  
+        &:hover {
+            color: $color-secondary;
         }
     }
     h5 {
@@ -309,28 +320,36 @@ footer {
         font-size: 1.5rem;
         margin: 0;
         font-weight: 500;
+        @include tablet {
+            text-align: center;
+        }
     }
     ul {
         padding-left: 15px;
         list-style-type: none;
+        @include tablet {
+            display: flex;
+            justify-content: space-around;
+        }
     }
     li {
-        margin-top: 5px;
+        margin-top: 5px;    
     }
+
     
     .fas {
         @extend a;
         width: 20px;
     }
+
 }
-
-
-
+                      // Page Restaurant
 
 
 .logo{
     font-family : 'Shrikhand', cursif;
 }
+
 .bg {
     img {
     height: 250px;
@@ -355,7 +374,7 @@ footer {
     }
 
     .title {
-        padding: 10px 0 0 20px;
+        padding: 10px 0 0 10px;
         font-size: 1.2rem;
         position: relative;
     
@@ -363,12 +382,13 @@ footer {
             font-family : 'Shrikhand', cursif;
             font-weight: 500;
             font-size: 1.5rem;
+            margin: 20px 0 0 0;
         }
         .fas {
             position: absolute;
-            font-size: 1.5rem;
+            font-size: 1rem;
             right: 30px;
-            top: 31px;
+            top: 38px;
             cursor: pointer;
             color: $color-background;
             text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2.5px black;
@@ -394,14 +414,47 @@ footer {
     &__menu{
         @include desktop {
             width: 30%;
-    }
-    h3 {
-        border-bottom: 2px solid $color-tertiary;
-        width: 40px;
-        font-weight: normal;
         }
-    }
+        h3 {
+            border-bottom: 2px solid $color-tertiary;
+            width: 40px;
+            font-weight: normal;
+            }
+        &__item {
+            animation: slide 2.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+            // animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        }
+    }   
 }
+.slide-delay1 {
+    animation-delay: 0.4s;
+}
+.slide-delay2 {
+    animation-delay: 0.8s;
+}
+
+
+  @keyframes slide {
+    0% {
+        transform: translateY(1000px);
+        opacity: 0;
+    }
+    90% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+  }
+//   @keyframes fade-in {
+//     0% {
+//       opacity: 0;
+//     }
+//     100% {
+//       opacity: 1;
+//     }
+//   }
 
 .meal {
     background: #FFF;
@@ -411,7 +464,6 @@ footer {
     display: flex;
     cursor: pointer;
     box-shadow: 4px 4px 16px #b8b7b7;
-    animation: slide 1.5s linear both;
     
     &__info {
         padding: 10px;
@@ -452,29 +504,7 @@ footer {
         margin: 10px 0 0 0;
     }
 }
-.slide-delay1 {
-    animation-delay: 0.4s;
-}
-.slide-delay2 {
-    animation-delay: 0.8s;
-}
-.slide-delay3 {
-    animation-delay: 1.2s;
-}
 
-  @keyframes slide {
-    0% {
-        transform: translateY(1000px);
-        opacity: 0;
-    }
-    80% {
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-  }
 
 .check {
     display: flex;
@@ -503,4 +533,3 @@ footer {
     text-align: center;
     padding: 15px 35px;
 }
-

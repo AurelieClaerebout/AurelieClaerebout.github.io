@@ -19,6 +19,7 @@
     margin: 20px;
     color: #FFF;
     box-shadow: 4px 4px 10px #b8b7b7;
+    cursor: pointer;
     &:hover {
         background: linear-gradient(lighten($color-secondary,10),lighten($color-primary, 10));
         box-shadow: 5px 5px 4px #b8b7b7;
