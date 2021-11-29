@@ -154,6 +154,7 @@ button:hover {
 }
 .functioning li .fas {
   padding: 20px 40px 20px 60px;
+  width: 10px;
 }
 @media (min-width: 600px) {
   .functioning li .fas {
@@ -320,8 +321,7 @@ footer li {
   margin-top: 5px;
 }
 footer .fas {
-  margin-right: 3px;
-  width: 1.3rem;
+  width: 20px;
 }
 
 .logo {

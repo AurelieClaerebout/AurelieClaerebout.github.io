@@ -155,6 +155,7 @@ button {
     }
     .fas {
         padding: 20px 40px 20px 60px;
+        width: 10px;
         @include tablet {
             padding: 20px;
         }
@@ -319,8 +320,7 @@ footer {
     
     .fas {
         @extend a;
-        margin-right: 3px;
-        width: 1.3rem;
+        width: 20px;
     }
 }
 
