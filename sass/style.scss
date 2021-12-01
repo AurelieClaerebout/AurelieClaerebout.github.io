@@ -4,8 +4,7 @@
 
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
-   
+    font-family: 'Roboto', sans-serif; 
 }
 a {
     color: black;
@@ -22,8 +21,6 @@ a {
     align-items: center;
     background: hsl(0deg 0% 100% / 90%);
     animation: loader 2s both;
-    
-
 
     &__spinner{
         width: 100px;
@@ -32,9 +29,7 @@ a {
         border-right: 8px solid $color-primary;
         border-left: 8px solid $color-secondary;
         animation: spin 1s linear infinite;
-    
-        
-        
+      
     }
 
     &__spinner2{
@@ -43,10 +38,8 @@ a {
         border-radius: 50%; 
         border-right: 6px solid $color-tertiary;
         border-left: 6px solid $color-tertiary;
-        animation: spin-reverse 0.5s linear infinite;
-        
+        animation: spin-reverse 0.5s linear infinite; 
     }
-    
 }
 @keyframes spin {
     0% { 
@@ -67,7 +60,6 @@ a {
 }
 
 @keyframes loader {
-    
     80% {
         opacity: 1;
         z-index: 1;
@@ -117,16 +109,12 @@ header {
         margin: 0;
     }
 }
-
 input[type="search"] {
     border: none;
-    
 }
-
 button {
     @include button
 }
-
 .functioning {
     &__title {
         font-size: 1.3rem;
@@ -145,10 +133,8 @@ button {
             justify-content: space-around;
         }
     }
-
 }
-.functioning li {
-    
+.functioning li { 
     background: $color-background;
     height: 60px;
     margin-bottom: 15px;
@@ -173,7 +159,6 @@ button {
         @include tablet {
             font-size: 1rem;
         }
-
     }
     &:hover {
         background: lighten($color-primary, 35);
@@ -194,15 +179,12 @@ button {
     color: #FFF;
     font-weight: normal;
 }
-
 .function {
     display: flex;
     @include tablet {
         justify-content: center;
-    }
-    
+    }   
 }
-
 .container {
     background: $color-background;
     padding-bottom: 50px;
@@ -221,8 +203,7 @@ button {
         object-fit: cover;
         @include desktop {
             height: 200px;
-        }
-        
+        }   
     }
     .new {
         background: $color-tertiary;
@@ -268,8 +249,7 @@ button {
             width: 40%;
         }
     }
-}     
-        
+}          
 .heart {
     position: absolute;
     right: 20px;
@@ -288,11 +268,9 @@ button {
 
         }
 }
- 
 footer {
     background: darken($color: $color-background, $amount: 70);
-    padding-bottom: 30px;
-    
+    padding-bottom: 30px; 
     a {
         color: #FFF;
         &:hover .fas {
@@ -324,13 +302,10 @@ footer {
     li {
         margin-top: 5px;    
     }
-
-    
     .fas {
         @extend a;
         width: 20px;
     }
-
 }
                       // Page Restaurant
 
@@ -338,35 +313,30 @@ footer {
 .logo{
     font-family : 'Shrikhand', cursif;
 }
-
 .bg {
     img {
     height: 250px;
     width: 100%;
     object-fit: cover;
-    @include desktop {
-        height: 600px;
-    }
+        @include desktop {
+            height: 600px;
+        }
     }
 }
-
-
 .container-menu {
     background: $color-background;
     border-radius: 30px 30px 0 0;
     position: relative;
     margin-top: -50px;
-    @include desktop {
-        width: 80%;
-        margin: auto;
-        margin-top: -60px;
-    }
-
+        @include desktop {
+            width: 80%;
+            margin: auto;
+            margin-top: -60px;
+        }
     .title {
         padding: 10px 0 0 10px;
         font-size: 1.2rem;
         position: relative;
-    
         h2 {
             font-family : 'Shrikhand', cursif;
             font-weight: 500;
@@ -376,14 +346,14 @@ footer {
                 padding-left: 25px;
             }
         }
-        .fas {
-            position: absolute;
-            font-size: 1rem;
-            right: 30px;
-            top: 38px;
-            cursor: pointer;
-            color: $color-background;
-            text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2.5px black;
+    .fas {
+        position: absolute;
+        font-size: 1rem;
+        right: 30px;
+        top: 38px;
+        cursor: pointer;
+        color: $color-background;
+        text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2.5px black;
             &:hover {
                 color: $color-primary;
                 background: linear-gradient($color-secondary, $color-primary);
@@ -396,7 +366,6 @@ footer {
         }
     }
 }
-
 .card {
     padding: 10px;
     @include desktop {
@@ -411,10 +380,9 @@ footer {
             border-bottom: 2px solid $color-tertiary;
             width: 40px;
             font-weight: normal;
-            }    
+        }    
     }   
 }
-
 .meal {
     background: #FFF;
     border-radius: 15px;
@@ -457,14 +425,12 @@ footer {
         margin: 10px 0 0 0;
     }  
     
-    
     &__price {
         font-weight: bold;
         padding-left: 10px;
         margin: 10px 0 0 0;
     }
 }
-
 @keyframes moveitems {
     0% {
         transform: translateY(10px);
@@ -511,7 +477,6 @@ footer {
         animation-delay: 800ms;
     }
 }
-
 .check {
     display: flex;
     background: $color-tertiary;
@@ -527,14 +492,12 @@ footer {
         transition: 0.7s;
     }
 }
-
 .meal:hover .check {
     margin-right: 0;
 }
 .meal:hover i {
     transform: rotate(0deg);
 }
-
 .order-button {
     text-align: center;
     padding: 15px 35px;
