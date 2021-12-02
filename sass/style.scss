@@ -112,9 +112,6 @@ header {
 input[type="search"] {
     border: none;
 }
-button {
-    @include button
-}
 .functioning {
     &__title {
         font-size: 1.3rem;
