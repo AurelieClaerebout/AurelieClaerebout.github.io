@@ -402,7 +402,7 @@ footer .fas {
   top: 38px;
   cursor: pointer;
   color: #f6f6f6;
-  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2.5px black;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 .container-menu .title .fas:hover {
   color: #9356DC;

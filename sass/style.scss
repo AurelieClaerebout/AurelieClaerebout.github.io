@@ -349,7 +349,7 @@ footer {
         top: 38px;
         cursor: pointer;
         color: $color-background;
-        text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2.5px black;
+        text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
             &:hover {
                 color: $color-primary;
                 background: linear-gradient($color-secondary, $color-primary);
