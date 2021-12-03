@@ -50,6 +50,10 @@ a {
     }
 }
 @keyframes loader {
+    0% {
+        opacity: 1;
+        z-index: 1;
+    }
     80% {
         opacity: 1;
         z-index: 1;
