@@ -38,7 +38,7 @@ a {
         border-radius: 50%; 
         border-right: 6px solid $color-tertiary;
         border-left: 6px solid $color-tertiary;
-        animation: spin-reverse 0.5s linear infinite; 
+        animation: spin 1s linear infinite reverse; 
     }
 }
 @keyframes spin {
@@ -49,16 +49,6 @@ a {
         transform: rotate(360deg); 
     }
 }
-
-@keyframes spin-reverse {
-    0% { 
-        transform: rotate(360deg); 
-    }
-    100% { 
-        transform: rotate(0deg); 
-    }
-}
-
 @keyframes loader {
     80% {
         opacity: 1;
@@ -265,6 +255,15 @@ input[type="search"] {
 
         }
 }
+@keyframes animheart {
+    0% {
+        opacity: 0;
+      }
+    100% {
+        opacity: 100%;
+      }
+  }    
+
 footer {
     background: darken($color: $color-background, $amount: 70);
     padding-bottom: 30px; 
@@ -492,7 +491,7 @@ footer {
 .meal:hover .check {
     margin-right: 0;
 }
-.meal:hover i {
+.meal:hover .fas {
     transform: rotate(0deg);
 }
 .order-button {

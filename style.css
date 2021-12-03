@@ -62,7 +62,7 @@ a, footer .fas {
   border-radius: 50%;
   border-right: 6px solid #99E2D0;
   border-left: 6px solid #99E2D0;
-  animation: spin-reverse 0.5s linear infinite;
+  animation: spin 1s linear infinite reverse;
 }
 
 @keyframes spin {
@@ -71,14 +71,6 @@ a, footer .fas {
   }
   100% {
     transform: rotate(360deg);
-  }
-}
-@keyframes spin-reverse {
-  0% {
-    transform: rotate(360deg);
-  }
-  100% {
-    transform: rotate(0deg);
   }
 }
 @keyframes loader {
@@ -308,6 +300,14 @@ input[type=search] {
   animation: animheart 3s linear;
 }
 
+@keyframes animheart {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
 footer {
   background: #444444;
   padding-bottom: 30px;
@@ -541,7 +541,7 @@ footer .fas {
   margin-right: 0;
 }
 
-.meal:hover i {
+.meal:hover .fas {
   transform: rotate(0deg);
 }
 
